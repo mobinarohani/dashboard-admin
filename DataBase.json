@@ -1,0 +1,152 @@
+{
+    "laptopLenovo":[
+        {
+            "name": "Jan",
+            "Sale": 155000
+        },
+        {
+            "name": "Feb",
+            "Sale": 220000
+        },
+        {
+            "name": "Mar",
+            "Sale": 100000
+        },
+        {
+            "name": "Apr",
+            "Sale": 150000
+        },
+        {
+            "name": "May",
+            "Sale": 30500
+        },
+        {
+            "name": "Jun",
+            "Sale": 100300
+        },
+        {
+            "name": "Jul",
+            "Sale": 230450
+        },
+        {
+            "name": "Aug",
+            "Sale": 300000
+        },
+        {
+            "name": "Sep",
+            "Sale": 158090
+        },
+        {
+            "name": "Octn",
+            "Sale": 305898
+        },
+        {
+            "name": "Nov",
+            "Sale": 214603
+        },
+        {
+            "name": "Dec",
+            "Sale": 120700
+        }
+    ],
+    "laptopAsus":[
+        {
+            "name": "Jan",
+            "Sale": 255000
+        },
+        {
+            "name": "Feb",
+            "Sale": 100000
+        },
+        {
+            "name": "Mar",
+            "Sale": 305000
+        },
+        {
+            "name": "Apr",
+            "Sale": 150000
+        },
+        {
+            "name": "May",
+            "Sale": 220000
+        },
+        {
+            "name": "Jun",
+            "Sale": 150000
+        },
+        {
+            "name": "Jul",
+            "Sale": 255000
+        },
+        {
+            "name": "Aug",
+            "Sale": 180000
+        },
+        {
+            "name": "Sep",
+            "Sale": 280000
+        },
+        {
+            "name": "Octn",
+            "Sale": 195000
+        },
+        {
+            "name": "Nov",
+            "Sale": 305000
+        },
+        {
+            "name": "Dec",
+            "Sale": 230000
+        }
+    ],
+    "laptopHp":[
+        {
+            "name": "Jan",
+            "Sale": 185000
+        },
+        {
+            "name": "Feb",
+            "Sale": 230000
+        },
+        {
+            "name": "Mar",
+            "Sale": 305000
+        },
+        {
+            "name": "Apr",
+            "Sale": 280000
+        },
+        {
+            "name": "May",
+            "Sale": 195000
+        },
+        {
+            "name": "Jun",
+            "Sale": 220000
+        },
+        {
+            "name": "Jul",
+            "Sale": 100000
+        },
+        {
+            "name": "Aug",
+            "Sale": 300000
+        },
+        {
+            "name": "Sep",
+            "Sale": 190888
+        },
+        {
+            "name": "Octn",
+            "Sale": 209300
+        },
+        {
+            "name": "Nov",
+            "Sale": 255000
+        },
+        {
+            "name": "Dec",
+            "Sale": 179000
+        }
+    ]
+}

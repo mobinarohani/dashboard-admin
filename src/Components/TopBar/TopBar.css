@@ -1,0 +1,51 @@
+
+.TopbarElement{
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.containerTopbarRight{
+    display: flex;
+}
+
+.containerTopbarRight {
+    display: flex;
+    padding: 5px;
+    justify-content: center;
+    height: 100%;
+    align-items: center;
+}
+
+.userAccount{
+    font-size: 40px !important;
+    color: #b9b7b7 !important;
+}
+
+.topbarNotification{
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+    color: #555;
+}
+
+.topIconBadge{
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-size: 12px;
+    position: absolute;
+    top: -5px;
+    right: -2px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
