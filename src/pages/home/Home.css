@@ -1,3 +1,8 @@
 .containerHome{
     flex: 4;
 }
+
+.containerProduct{
+    display: flex;
+    width: 100%;
+}
