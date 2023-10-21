@@ -21,7 +21,7 @@ export default function Sidebar() {
                                 Home
                             </li>
                         </Link>
-                        <Link to='' className='link'>
+                        <Link to='/Analytics' className='link'>
                             <li className='sidebar-itemIcon '>
                                 <TimelineIcon className='itemIcon' />
                                 Analytics
@@ -44,7 +44,7 @@ export default function Sidebar() {
                                 New User
                             </li>
                         </Link>
-                        <Link to='/products' className='link'>
+                        <Link to='/Product' className='link'>
                             <li className='sidebar-itemIcon '>
                                 <StorefrontIcon className='itemIcon' />
                                 Products

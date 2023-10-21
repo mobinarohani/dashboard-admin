@@ -11,7 +11,7 @@ export default function PieCharts({ title, data, datakey }) {
     };
 
     return (
-        <div className='chart'>
+        <div className='chartPie'>
             <h3 className="chartTitle">{title}</h3>
             <ComposedChart
                 layout="vertical"

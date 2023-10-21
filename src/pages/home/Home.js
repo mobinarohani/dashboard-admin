@@ -54,31 +54,25 @@ export default function Home() {
           </div>
           <div className="containerProduct">
             <div className="productElement">
-              <div>
                 <PieCharts
                   title="Lenovo Sale"
                   data={laptopLenovo.map((sale) => sale[1])}
                   datakey="Sale"
                 />
-              </div>
             </div>
             <div className="productElement">
-              <div>
                 <PieCharts
                   title="Asus Sale"
                   data={laptopAsus.map((sale) => sale[1])}
                   datakey="Sale"
                 />
-              </div>
             </div>
             <div className="productElement">
-              <div>
                 <PieCharts
                   title="Hp Sale"
                   data={laptopHp.map((sale) => sale[1])}
                   datakey="Sale"
                 />
-              </div>
             </div>
           </div>
         </>
