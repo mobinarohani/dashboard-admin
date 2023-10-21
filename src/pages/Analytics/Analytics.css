@@ -1,0 +1,6 @@
+.cotainerAnalytics{
+    flex: 4;
+    margin: 30px;
+    display: flex;
+    flex-direction: column;
+}
