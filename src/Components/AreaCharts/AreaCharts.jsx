@@ -63,19 +63,6 @@ export default function AreaCharts() {
 
     }, []);
 
-    //     let datam={
-    //         name: "Jan",
-    //         sale1: SaleData[0],
-    //         sale2: SaleData[1],
-    //         sale3: SaleData[2]
-    //     }
-
-    // setDatas(prev=>{
-    //     return[...prev,datam]
-    // })
-
-    // setDatas(datam)
-
 
     console.log(Datas);
 
