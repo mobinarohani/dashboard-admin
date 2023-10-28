@@ -1,1 +1,2 @@
 https://github.com/mobinarohani/dashboard-admin.git
+json-server --watch db.json

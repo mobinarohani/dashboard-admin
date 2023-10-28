@@ -4,6 +4,7 @@ import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 
 export default function AreaCharts() {
 
+    let month = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'];
     let SaleData = [];
     const [Datas, setDatas] = useState([]);
     const [laptopLenovo, setlaptopLenovo] = useState([]);
@@ -15,7 +16,7 @@ export default function AreaCharts() {
             .then((res) => {
                 return res.json();
             })
-            .then((data) => setlaptopLenovo(Object.entries(data)))
+            .then((data) => setlaptopLenovo(data))
     }, []);
 
     useEffect(() => {
@@ -23,7 +24,7 @@ export default function AreaCharts() {
             .then((res) => {
                 return res.json();
             })
-            .then((data) => setlaptopAsus(Object.entries(data)))
+            .then((data) => setlaptopAsus(data))
     }, []);
 
     useEffect(() => {
@@ -31,40 +32,50 @@ export default function AreaCharts() {
             .then((res) => {
                 return res.json();
             })
-            .then((data) => setlaptopHp(Object.entries(data)))
+            .then((data) => setlaptopHp(data))
     }, []);
 
     useEffect(() => {
-        laptopLenovo.find(datavalue => {
-            if (datavalue[1].name == 'Jan') SaleData.push(datavalue[1].Sale);
-        })
 
-        laptopAsus.find(datavalue => {
-            if (datavalue[1].name == 'Jan') SaleData.push(datavalue[1].Sale);
-        })
+        month.map(month => {
+            console.log(month);
+           let n=laptopLenovo.find(datavalue => {
+                    return datavalue.name == month
+            })
 
-        laptopHp.find(datavalue => {
-            if (datavalue[1].name == 'Jan') SaleData.push(datavalue[1].Sale);
-        })
+            // laptopAsus.find(datavalue => {
+            //     if (datavalue.name == month)
+            //         SaleData.push(datavalue.Sale);
+            // })
 
-        if (SaleData) {
-            let datam = {
-                name: "Jan",
-                sale1: SaleData[0],
-                sale2: SaleData[1],
-                sale3: SaleData[2]
+            // laptopHp.find(datavalue => {
+            //     if (datavalue.name == month)
+            //         SaleData.push(datavalue.Sale);
+            // })
+
+            if (SaleData) {
+                let datam = {
+                    name: month,
+                    sale1: SaleData[0],
+                    sale2: SaleData[1],
+                    sale3: SaleData[2]
+                }
+    
+    
+                setDatas(prev => {
+                    return [...prev, datam]
+                })
             }
 
+            console.log(n);
 
-            setDatas(prev => {
-                return [...prev, datam]
-            })
-        }
-
+        })
     }, []);
 
 
+    console.log(SaleData);
     console.log(Datas);
+
 
     // console.log( laptopLenovo[0][1].name);
     // console.log(SaleData);
