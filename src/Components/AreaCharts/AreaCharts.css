@@ -4,3 +4,14 @@
     box-shadow: 0 0 15px -10px rgba(0, 0, 0, .75);
     flex: 4;
 }
+
+.inputvalue{
+    display: flex;
+    margin: 1rem;
+    padding: 0.5rem;
+}
+
+.Select-input{
+    margin-left: 0.5rem;
+    border-radius: 0.5rem;
+}

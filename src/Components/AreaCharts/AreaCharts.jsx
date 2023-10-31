@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import './AreaCharts.css'
-import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from "recharts";
+import { ResponsiveContainer ,BarChart, Bar, XAxis, YAxis } from 'recharts';
 
 export default function AreaCharts() {
 
@@ -10,6 +10,8 @@ export default function AreaCharts() {
     const [laptopLenovo, setlaptopLenovo] = useState([]);
     const [laptopAsus, setlaptopAsus] = useState([]);
     const [laptopHp, setlaptopHp] = useState([]);
+    const [monthdata, setmonthdata] = useState("Jan");
+
 
     useEffect(() => {
         fetch("http://localhost:3000/laptopLenovo")
@@ -34,131 +36,78 @@ export default function AreaCharts() {
             })
             .then((data) => setlaptopHp(data))
     }, []);
+    let datam = [{
+    //     name: "Page A",
+    //     sale1: 4000,
+    //     sale2: 2400,
+    //     sale3: 2400
+    // },
+    // {
+    //     name: "Page A",
+    //     sale1: 4000,
+    //     sale2: 2400,
+    //     sale3: 2400
+    // },{
+    //     name: "Page C",
+    //     uv: 2000,
+    //     pv: 9800,
+    //     amt: 2290
+    },
+    ]
 
     useEffect(() => {
+        console.log(monthdata);
 
-        month.map(month => {
-            console.log(month);
-           let n=laptopLenovo.find(datavalue => {
-                    return datavalue.name == month
-            })
 
-            // laptopAsus.find(datavalue => {
-            //     if (datavalue.name == month)
-            //         SaleData.push(datavalue.Sale);
-            // })
-
-            // laptopHp.find(datavalue => {
-            //     if (datavalue.name == month)
-            //         SaleData.push(datavalue.Sale);
-            // })
-
-            if (SaleData) {
-                let datam = {
-                    name: month,
-                    sale1: SaleData[0],
-                    sale2: SaleData[1],
-                    sale3: SaleData[2]
-                }
-    
-    
-                setDatas(prev => {
-                    return [...prev, datam]
-                })
+        laptopLenovo.find(datavalue => {
+            if (datavalue.name == monthdata) {
+                SaleData.push(datavalue.Sale);
             }
-
-            console.log(n);
-
         })
-    }, []);
 
+        laptopAsus.find(datavalue => {
+            if (datavalue.name == monthdata)
+                SaleData.push(datavalue.Sale);
+        })
 
-    console.log(SaleData);
-    console.log(Datas);
+        laptopHp.find(datavalue => {
+            if (datavalue.name == monthdata)
+                SaleData.push(datavalue.Sale);
+        })
 
+        if (SaleData) {
+            datam = [{
+                name: monthdata,
+                sale1: SaleData[0],
+                sale2: SaleData[1],
+                sale3: SaleData[2]
+            }]
 
-    // console.log( laptopLenovo[0][1].name);
-    // console.log(SaleData);
-    const data = [
-        {
-            name: "Page A",
-            uv: 4000,
-            pv: 2400,
-            amt: 2400
-        },
-        {
-            name: "Page B",
-            uv: 3000,
-            pv: 1398,
-            amt: 2210
-        },
-        {
-            name: "Page C",
-            uv: 2000,
-            pv: 9800,
-            amt: 2290
-        },
-        {
-            name: "Page D",
-            uv: 2780,
-            pv: 3908,
-            amt: 2000
-        },
-        {
-            name: "Page E",
-            uv: 1890,
-            pv: 4800,
-            amt: 2181
-        },
-        {
-            name: "Page F",
-            uv: 2390,
-            pv: 3800,
-            amt: 2500
-        },
-        {
-            name: "Page G",
-            uv: 3490,
-            pv: 4300,
-            amt: 2100
+            console.log("datam", datam);
         }
-    ];
+        console.log('Datas', Datas);
+
+    }, [monthdata]);
 
     return (
         <div className='chartArea'>
+            <div className="inputvalue">
+                <h3>choose :</h3>
+                <select className='Select-input' value={monthdata} onChange={(event) => setmonthdata(event.target.value)}>
+                    <option value="Jan">Jan</option>
+                    <option value="Feb">Feb</option>
+                    <option value="Mar">Mar</option>
+                    <option value="Apr">Apr</option>
+                    <option value="May">May</option>
+                    <option value="Jun">Jun</option>
+                </select>
+            </div>
             <ResponsiveContainer width='100%' aspect={4}>
-                <AreaChart
-                    width={500}
-                    height={400}
-                    data={data}
-
-                >
-                    <CartesianGrid strokeDasharray="3 3" />
-                    <XAxis dataKey="name" />
+                <BarChart width={600} height={300} data={datam}>
+                    <XAxis dataKey="sale1"  />
                     <YAxis />
-                    <Tooltip />
-                    <Area
-                        type="monotone"
-                        dataKey="uv"
-                        stackId="1"
-                        stroke="#8884d8"
-                        fill="#8884d8"
-                    />
-                    <Area
-                        type="monotone"
-                        dataKey="pv"
-                        stackId="1"
-                        stroke="#82ca9d"
-                        fill="#82ca9d"
-                    />
-                    <Area
-                        type="monotone"
-                        dataKey="amt"
-                        stackId="1"
-                        stroke="#ffc658"
-                        fill="#ffc658"
-                    />
-                </AreaChart>
+                    <Bar dataKey='name' barSize={30} fill="#C2D9FF"/>
+                </BarChart>
             </ResponsiveContainer>
         </div>
     )
